@@ -1,4 +1,3 @@
-const User = require('./User');
-const Comments = require('./Comments');
-const Posts = require('./Posts');
+const { User, Comments, Posts } = require('../models');
+
 
