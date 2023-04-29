@@ -45,14 +45,14 @@ router.get('/posts/:id', passwordAuth, async (req, res) => {
     }
 });
 
-router.get('/profiles', passwordAuth, async (req, res) => {
+router.get('/dashboard', passwordAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.userID, {
             attributes: {exclude: ['password']},
             include: [{model: Posts}],
         });
         const user = userData.get({plain: true});
-        res.render('profile', {
+        res.render('dashboard', {
             ...user, 
             loggedIn: true
         });
@@ -61,7 +61,7 @@ router.get('/profiles', passwordAuth, async (req, res) => {
     }
 });
 
-router.get('./login', (req, res) => {
+router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/profile');
         return;
