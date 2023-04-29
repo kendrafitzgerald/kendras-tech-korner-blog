@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Posts} = require ('../models');
+const {User, Posts, Comments} = require ('../models');
 const passwordAuth = require('../utils/passwordAuth');
 
 router.get('/', async (req, res) => {
@@ -29,6 +29,10 @@ router.get('/posts/:id', passwordAuth, async (req, res) => {
                     model: User,
                     attributes: ['username']
                 },
+                {
+                    model: Comments,
+                    attributes: ['comment_text']
+                }
             ],
         });
         const post = postData.get({plain:true});
