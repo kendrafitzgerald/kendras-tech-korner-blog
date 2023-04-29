@@ -1,6 +1,6 @@
-const router = rquire('express').Router();
-const userRoutes = require('./userroutes');
-const postRoutes = require('./projectroutes');
+const router = require('express').Router();
+const userRoutes = require('../api/userRoutes');
+const postRoutes = require('../api/postRoutes');
 
 router.use('/users', userRoutes);
 

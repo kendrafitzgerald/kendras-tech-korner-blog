@@ -5,3 +5,5 @@ const passwordAuth = (req, res, next) => {
         next()
     };
 };
+
+module.exports = passwordAuth;
