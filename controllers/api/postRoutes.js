@@ -19,8 +19,6 @@ router.delete('/:id', passwordAuth, async (req, res) => {
         const deletedPost = await Posts.destroy({
             where: {
                 id: req.params.id,
-                userId: req.session.userId,
-                commentsId: req.session.commentsId
             },
         });
         if (!deletedPost) {
@@ -28,7 +26,7 @@ router.delete('/:id', passwordAuth, async (req, res) => {
             return;
         }
         res.status(200).json(deletedPost)
-    } catch (error) {
+    } catch (err) {
         res.status(500).json(err)
     }
 });
