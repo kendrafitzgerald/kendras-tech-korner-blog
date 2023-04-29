@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
             req.session.loggedIn = true;
             res.status(200).json(userData);
         });
-    } catch (error) {
+    } catch (err) {
         res.status(400).json(err)
     }
 });
@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
             req.session.loggedIn = true
             res.json({user: userData, message: 'You are logged in!'})
         })
-    } catch (error) {
+    } catch (err) {
         res.status(400).json(err);
     }
 });
