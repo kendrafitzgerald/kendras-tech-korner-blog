@@ -45,7 +45,7 @@ router.get('/posts/:id', passwordAuth, async (req, res) => {
     }
 });
 
-router.get('/dashboard/', passwordAuth, async (req, res) => {
+router.get('/dashboard', passwordAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.userID, {
             attributes: {exclude: ['password']},

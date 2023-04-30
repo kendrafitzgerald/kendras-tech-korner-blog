@@ -2,7 +2,8 @@ const router = require('express').Router();
 const {Comments, Posts, User} = require('../../models');
 const passwordAuth = require('../../utils/passwordAuth');
 
-router.post('/', passwordAuth, async (req, res) => {
+router.post('/', //passwordAuth,
+ async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
@@ -33,7 +34,8 @@ router.post('/', passwordAuth, async (req, res) => {
     }
 });
 
-router.put('/:id', passwordAuth, async (req, res) => {
+router.put('/:id', //passwordAuth,
+ async (req, res) => {
     try {
         const updatedComment = await Comments.update(
         {
@@ -50,7 +52,8 @@ router.put('/:id', passwordAuth, async (req, res) => {
         };
      });
 
-     router.delete('/:id', passwordAuth, async (req, res) => {
+     router.delete('/:id', //passwordAuth,
+      async (req, res) => {
         try {
             const deletedComment = await Comments.destroy({
                 where: {

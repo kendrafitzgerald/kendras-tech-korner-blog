@@ -1,12 +1,15 @@
-
-
 <section class="section is-medium">
   <h1 class="title">See Blog Posts</h1>
-  <div class="column">
-  <div class="column is-four-fifths has-background-danger-light">
-    <h1 class="has-text-grey">Title{{title}}</h1>
-    <h2 class="has-text-grey">Posted by {{username}} on this date</h2>
+{{#each posts as |post|}}
+  <div class ="card">
+    <a href="/posts/{{id}}">
+    <div class="card-header">
+        <p class ="card-header-title">Posted by {{users.username}} on {{format_date}}</p>
     </div>
+    <div class ="card-content">
+        {{title}}
+    </div>
+    </a>
   </div>
-  </div>
+{{/each}}
 </section>
