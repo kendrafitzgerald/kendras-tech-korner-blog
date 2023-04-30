@@ -1,8 +1,8 @@
-
+<form>
 <div class="field">
   <label class="label">Username</label>
   <p class ="control has-icons-left">
-    <input class="input is-success" type="text" placeholder="Username">
+    <input class="input is-success" id= "email-login" type="text" placeholder="Username">
     <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
     </span>
@@ -22,26 +22,28 @@
 <div class="field">
   <label class="label">Password</label>
   <p class="control has-icons-left">
-    <input class="input is-success" type="password" placeholder="Your Password">
+    <input class="input is-success" id="password-login" type="password" placeholder="Your Password">
     <span class="icon is-small is-left">
         <i class="fas fa-lock"></i>
     </span>
     </p>
 </div>
+</form>
 
 <div class="field">
   <p class="control">
-    <button class="button is-success">
+    <button class="button is-success" class="login-form">
       Log In
     </button>
   </p>
 </div>
 {{!-- Add font awesome and make colors different for things, maybe add hide/show functionality
 also make sure to have this page look better --}}
+<form>
 <div class="field">
   <label class="label">Username</label>
   <p class ="control has-icons-left">
-    <input class="input is-success" type="text" placeholder="Username">
+    <input class="input is-success" id= "name-signup"type="text" placeholder="Username">
     <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
     </span>
@@ -51,7 +53,7 @@ also make sure to have this page look better --}}
 <div class="field">
   <label class="label">Email</label>
    <p class="control has-icons-left">
-    <input class="input is-success" type="email" placeholder="example@example.com">
+    <input class="input is-success" id= "email=signup" type="email" placeholder="example@example.com">
     <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
     </span>
@@ -61,16 +63,16 @@ also make sure to have this page look better --}}
 <div class="field">
   <label class="label">Password</label>
   <p class="control has-icons-left">
-    <input class="input is-success" type="password" placeholder="Must be at least 8 characters">
+    <input class="input is-success" id="password-signup" type="password" placeholder="Must be at least 8 characters">
     <span class="icon is-small is-left">
         <i class="fas fa-lock"></i>
     </span>
     </p>
 </div>
-
+</form>
 <div class="field">
   <p class="control">
-    <button class="button is-success">
+    <button class="button is-success" class="signup-form">
       Sign Up
     </button>
   </p>
