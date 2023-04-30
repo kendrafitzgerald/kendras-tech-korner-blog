@@ -1,7 +1,7 @@
-const {Users} = require('../models/index')
- // module.exports = {
+// const {Users} = require('../models/index')
+//   module.exports = {
 //     format_date: (date) => {
-//         return date.toLocaleDateString()
-//       }
-//      };
+//        return date.toLocaleDateString()
+//      }
+//    };
  
