@@ -2,7 +2,7 @@
 <div class="field">
   <label class="label">Username</label>
   <p class ="control has-icons-left">
-    <input class="input is-success" id= "email-login" type="text" placeholder="Username">
+    <input class="input is-success" id= "user-name" type="text" placeholder="Username">
     <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
     </span>
@@ -12,7 +12,7 @@
 <div class="field">
   <label class="label">Email</label>
    <p class="control has-icons-left">
-    <input class="input is-success" type="email" placeholder="example@example.com">
+    <input class="input is-success" id="email-login" type="email" placeholder="example@example.com">
     <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
     </span>
@@ -32,7 +32,7 @@
 
 <div class="field">
   <p class="control">
-    <button class="button is-success" class="login-form">
+    <button class="button is-success" id="login-form">
       Log In
     </button>
   </p>
@@ -43,7 +43,7 @@ also make sure to have this page look better --}}
 <div class="field">
   <label class="label">Username</label>
   <p class ="control has-icons-left">
-    <input class="input is-success" id= "name-signup"type="text" placeholder="Username">
+    <input class="input is-success" id= "name-signup" type="text" placeholder="Username">
     <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
     </span>
@@ -53,7 +53,7 @@ also make sure to have this page look better --}}
 <div class="field">
   <label class="label">Email</label>
    <p class="control has-icons-left">
-    <input class="input is-success" id= "email=signup" type="email" placeholder="example@example.com">
+    <input class="input is-success" id= "email-signup" type="email" placeholder="example@example.com">
     <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
     </span>
@@ -72,8 +72,9 @@ also make sure to have this page look better --}}
 </form>
 <div class="field">
   <p class="control">
-    <button class="button is-success" class="signup-form">
+    <button class="button is-success" id="signup-form">
       Sign Up
     </button>
   </p>
 </div>
+<script src="/js/login.js"></script>

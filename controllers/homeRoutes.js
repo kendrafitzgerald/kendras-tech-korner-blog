@@ -40,7 +40,7 @@ router.get('/posts/:id', passwordAuth, async (req, res) => {
             ...post,
             loggedIn: req.session.loggedIn
         })
-    } catch (error) {
+    } catch (err) {
         res.status(500).json(err)
     }
 });
@@ -56,14 +56,14 @@ router.get('/dashboard', passwordAuth, async (req, res) => {
             ...user, 
             loggedIn: true
         });
-    } catch (error) {
+    } catch (err) {
         res.status(500).json(err);
     }
 });
 
 router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
-        res.redirect('/profile');
+        res.redirect('/dashboard');
         return;
     } 
     res.render('login');

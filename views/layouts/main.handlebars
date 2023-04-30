@@ -21,21 +21,23 @@
     <a href = "/dashboard/{{id}}" class="navbar-item">
         Dashboard
       </a>
-      <div class="navbar-item">
-        <div class="buttons">
-          <a href = "/login"class="button is-danger">
-            <strong>Log In</strong>
-          </a>
+      {{#if loggedIn}}
+      <button class="button is-danger" id="logout">Log Out</button>
+      {{else}}
+      <a href="/login" class="navbar-item">Log In</a>
+      {{/if}}
         </div>
       </div>
-    </div>
+    
   </div>
 </nav>
   </div>
 </section>
 
 
-
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
 {{{body}}}
 
 
