@@ -1,4 +1,21 @@
 
+const login= document.querySelector('#show-login');
+const signup = document.querySelector('#show-signup');
+let showLogin = document.querySelector('#login-form');
+let showSignUp = document.querySelector('#signup-form');
+
+login.addEventListener('click', () => {
+    showLogin.setAttribute('style', 'display: block');
+    login.setAttribute('style','display: none');
+    signup.setAttribute('style','display: none')
+});
+
+signup.addEventListener('click', () => {
+    showSignUp.setAttribute('style','display: block');
+    login.setAttribute('style','display: none');
+    signup.setAttribute('style','display: none')
+});
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
   

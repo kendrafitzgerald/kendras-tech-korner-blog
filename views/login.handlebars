@@ -1,4 +1,8 @@
-<form>
+
+<button class="button is-large is-fourfifths is-danger is outlined" id="show-login">Log In</button>
+<button class="button is-large is-fourfifths is-danger is outlined" id="show-signup">Sign Up</button>
+
+<form id="login-form" style="display:none">
 <div class="field">
   <label class="label">Username</label>
   <p class ="control has-icons-left">
@@ -28,8 +32,6 @@
     </span>
     </p>
 </div>
-</form>
-
 <div class="field">
   <p class="control">
     <button class="button is-success" id="login-form">
@@ -37,9 +39,10 @@
     </button>
   </p>
 </div>
+</form>
 {{!-- Add font awesome and make colors different for things, maybe add hide/show functionality
 also make sure to have this page look better --}}
-<form>
+<form id="signup-form" style="display:none">
 <div class="field">
   <label class="label">Username</label>
   <p class ="control has-icons-left">
@@ -69,7 +72,6 @@ also make sure to have this page look better --}}
     </span>
     </p>
 </div>
-</form>
 <div class="field">
   <p class="control">
     <button class="button is-success" id="signup-form">
@@ -77,4 +79,5 @@ also make sure to have this page look better --}}
     </button>
   </p>
 </div>
+</form>
 <script src="/js/login.js"></script>
