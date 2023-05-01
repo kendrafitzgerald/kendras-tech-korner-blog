@@ -56,7 +56,6 @@ router.get('/dashboard', passwordAuth, async (req, res) => {
     try {
         console.log('i got here')
         const userData = await User.findByPk(req.session.userId, {
-            attributes: {exclude: ['password']},
             include: [{model: Posts}],
         });
         const user = userData.get({plain: true});

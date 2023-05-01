@@ -18,7 +18,7 @@ const createCommentHandler = async (event) => {
             headers: {'Content-Type': 'application/json'}
         });
     if (response.ok) {
-        console.log(response)
+        document.location.reload();
     } else {
         alert('Oops! Could not create comment. Try again.')
     };
