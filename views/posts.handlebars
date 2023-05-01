@@ -7,3 +7,34 @@
         {{post_text}}
     </div>
 </div>
+
+{{#if comments.length}}
+<h2>Comments</h2>
+{{#each comments}} 
+<div class="card">
+    <div class="card-header">
+        <p class="card-header-title">Posted by {{this.user.username}} on {{format_date createdAt}}</p>
+    </div>
+        <div class="content">{{comment_text}}</div>
+</div>
+    {{/each}}
+
+  {{else}}
+  <h2>No Comments Yet! Be the first to add one</h2>
+  {{/if}}
+
+  <form style="display: none" id="create-comment-form">
+<div class="field">
+  <label class="label">Write your comment here!</label>
+  <div class="control">
+    <textarea class="textarea" id="comment-text" placeholder="Write Your Comment Here"></textarea>
+  </div>
+</div>
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link" id="submit-new-comment">Submit</button>
+  </div>
+  </div>
+  </form>
+<button class="button is-large is-fourfifths is-danger is outlined" id="create-comment">Add a comment!</button>
+<script src="/js/addComment.js"></script>
