@@ -1,6 +1,7 @@
 {{!-- shows posts of that user in their dashboard --}}
+{{log this}}
 {{#if posts.length}}
-{{#each posts as |post|}}
+{{#each posts}}
 <div class ="card">
     <a href="/posts/{{id}}">
     <div class="card-header">

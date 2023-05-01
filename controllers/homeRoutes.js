@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {User, Posts, Comments} = require ('../models');
 const passwordAuth = require('../utils/passwordAuth');
 
+// get all posts, include the username of who created the post
 router.get('/', async (req, res) => {
     try {
         const postData = await Posts.findAll({
@@ -11,7 +12,7 @@ router.get('/', async (req, res) => {
             }],
     })
     const posts = postData.map((posts) => posts.get({plain: true}));
-
+    //render these on the homepage
     res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn
@@ -21,6 +22,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+//get a single post, need to be logged in to view
 router.get('/posts/:id', passwordAuth, async (req, res) => {
     try {
         const postData = await Posts.findByPk(req.params.id, {
@@ -35,16 +37,17 @@ router.get('/posts/:id', passwordAuth, async (req, res) => {
                 }
             ],
         });
+        //render on the posts page
         const post = postData.get({plain:true});
-        res.render('post', {
+        res.render('posts', {
             ...post,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
         })
     } catch (err) {
         res.status(500).json(err)
     }
 });
-
+//access the user's dashboard, include their posts
 router.get('/dashboard', passwordAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.userID, {
@@ -60,7 +63,7 @@ router.get('/dashboard', passwordAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
+//if user is logged in, redirect them to their dashboard
 router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/dashboard');

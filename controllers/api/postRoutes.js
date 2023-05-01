@@ -1,9 +1,10 @@
+//requires router, posts model, and passworth auth
 const router = require('express').Router();
 const {Posts} = require('../../models');
 const passwordAuth = require('../../utils/passwordAuth');
 
-router.post('/', //passwordAuth,
- async (req, res) => {
+//creates a new post body and adds user id?
+router.post('/', passwordAuth, async (req, res) => {
     try {
         const newPost = await Posts.create({
             ...req.body,
@@ -14,9 +15,8 @@ router.post('/', //passwordAuth,
         res.status(400).json(err)
     }
 });
-
-router.put('/:id', //passwordAuth, 
-async (req, res) => {
+//updates a post by searching for id 
+router.put('/:id', passwordAuth, async (req, res) => {
     try {
         const updatedPost = await Posts.update(
         {
@@ -34,8 +34,7 @@ async (req, res) => {
         };
      });
 
-router.delete('/:id', //passwordAuth, 
-async (req, res) => {
+router.delete('/:id', passwordAuth, async (req, res) => {
     try {
         const deletedPost = await Posts.destroy({
             where: {

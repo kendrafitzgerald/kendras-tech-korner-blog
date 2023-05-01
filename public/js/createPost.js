@@ -9,19 +9,20 @@ const createPostHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector("#post-title").value.trim();
-    const postContent = document.querySelector("#post-content").value.trim();
+    const post_text = document.querySelector("#post-content").value.trim();
 
-    if (title && postContent) {
+    if (title && post_text) {
         const response = await fetch('/api/posts', {
             method: 'POST',
-            body: JSON.stringify({title, postContent}),
+            body: JSON.stringify({title, post_text}),
             headers: {'Content-Type': 'application/json'}
         });
     if (response.ok) {
         document.location.replace('/dashboard')
     } else {
-        alert('Failed to create post. Try again.')
+        alert('Oops! Could not create post. Try again.')
     };
+    console.log(response)
   };
 };
 

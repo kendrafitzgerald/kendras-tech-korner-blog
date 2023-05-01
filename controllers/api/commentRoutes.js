@@ -1,9 +1,11 @@
+// require router, models, and password authorization 
+
 const router = require('express').Router();
 const {Comments, Posts, User} = require('../../models');
 const passwordAuth = require('../../utils/passwordAuth');
 
-router.post('/', //passwordAuth,
- async (req, res) => {
+//creates a single comment by finding user id, post id, and creating a new comment with his ids
+router.post('/', passwordAuth, async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
@@ -33,9 +35,8 @@ router.post('/', //passwordAuth,
         res.status(400).json(err)
     }
 });
-
-router.put('/:id', //passwordAuth,
- async (req, res) => {
+//update a comment by searching by accessing a single id and updating the comment 
+router.put('/:id', passwordAuth, async (req, res) => {
     try {
         const updatedComment = await Comments.update(
         {
@@ -52,8 +53,8 @@ router.put('/:id', //passwordAuth,
         };
      });
 
-     router.delete('/:id', //passwordAuth,
-      async (req, res) => {
+     //delete a comment by id 
+     router.delete('/:id', passwordAuth, async (req, res) => {
         try {
             const deletedComment = await Comments.destroy({
                 where: {
