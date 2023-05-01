@@ -50,14 +50,15 @@ router.get('/posts/:id', passwordAuth, async (req, res) => {
 //access the user's dashboard, include their posts
 router.get('/dashboard', passwordAuth, async (req, res) => {
     try {
-        const userData = await User.findByPk(req.session.userID, {
+        console.log('i got here')
+        const userData = await User.findByPk(req.session.userId, {
             attributes: {exclude: ['password']},
             include: [{model: Posts}],
         });
         const user = userData.get({plain: true});
         res.render('dashboard', {
             ...user, 
-            loggedIn: true
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
