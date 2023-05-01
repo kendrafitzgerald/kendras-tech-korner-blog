@@ -1,16 +1,39 @@
+{{!-- shows posts of that user in their dashboard --}}
+{{#if posts.length}}
+{{#each posts as |post|}}
+<div class ="card">
+    <a href="/posts/{{id}}">
+    <div class="card-header">
+        <p class ="card-header-title">Posted by {{users.username}} on </p>
+    </div>
+    <div class ="card-content is-strong">
+        {{title}}
+    </div>
+    </a>
+  </div>
+{{/each}}
+{{else}}
+<h1>You have no posts! Click the create post button to write one!</h1>
+{{/if}}
+
+<button class="button is-large is-fourfifths is-danger is outlined" id="create-post">Create a New Post</button>
+{{!-- form to create a new post once the create button is clicked --}}
+<form style="display:none" id="create-post-form">
 <div class="field">
   <label class="label">Title</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input">
+    <input class="input" id="post-title" type="text" placeholder="Title Your Post">
   </div>
 </div>
 <div class="field">
   <label class="label">Write your blog post here!</label>
   <div class="control">
-    <textarea class="textarea" placeholder="Textarea"></textarea>
+    <textarea class="textarea" id="post-content" placeholder="Write Your Post Here"></textarea>
   </div>
 </div>
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link">Submit</button>
+    <button class="button is-link" id="submit-new-post">Submit</button>
   </div>
+  </div>
+  </form>
