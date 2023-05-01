@@ -23,6 +23,28 @@
   <h2>No Comments Yet! Be the first to add one</h2>
   {{/if}}
 
+  <button class="button is-large is-fourfifths is-danger is outlined" id="update-post">Update Your Post</button>
+{{!-- form to create a new post once the create button is clicked --}}
+<form style="display: none" id="update-form">
+<div class="field">
+  <label class="label">Title</label>
+  <div class="control">
+    <input class="input" id="new-title" type="text" value="{{title}}">
+  </div>
+</div>
+<div class="field">
+  <label class="label">Write your blog post here!</label>
+  <div class="control">
+    <textarea class="textarea" id="update-text" type="text" value="{{post_text}}"></textarea>
+  </div>
+</div>
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link" id="submit-update">Submit</button>
+  </div>
+  </div>
+  </form>
+{{!--  --}}
   <form style="display: none" id="create-comment-form">
 <div class="field">
   <label class="label">Write your comment here!</label>
@@ -38,3 +60,4 @@
   </form>
 <button class="button is-large is-fourfifths is-danger is outlined" id="create-comment">Add a comment!</button>
 <script src="/js/addComment.js"></script>
+<script src="/js/updatePost.js"></script>

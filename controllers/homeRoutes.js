@@ -29,11 +29,9 @@ router.get('/posts/:id', passwordAuth, async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username']
                 },
                 {
                     model: Comments,
-                    attributes: ['comment_text'],
                     include: {
                         model: User,
                         attributes: ['username']
