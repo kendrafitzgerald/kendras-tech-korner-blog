@@ -57,6 +57,7 @@ router.get('/dashboard', passwordAuth, async (req, res) => {
             include: [{model: Posts}],
         });
         const user = userData.get({plain: true});
+        console.log(user)
         res.render('dashboard', {
             ...user, 
             loggedIn: req.session.loggedIn

@@ -9,7 +9,7 @@ router.post('/:id', passwordAuth, async (req, res) => {
     try {
         const userData = await User.findOne({
             where: {
-                id: req.session.id
+                id: req.session.userId
             }
 
         });

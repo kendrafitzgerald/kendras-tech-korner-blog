@@ -25,13 +25,13 @@ Posts.init (
                 key: 'id'
             },
         },
-        comments_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'comments',
-                key: 'id'
-            },
-        },
+        // comments_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'comments',
+        //         key: 'id'
+        //     },
+        // },
     },
     {
         sequelize,

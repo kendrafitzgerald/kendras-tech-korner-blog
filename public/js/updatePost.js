@@ -17,7 +17,7 @@ const updatePostHandler = async (event) => {
             headers: {'Content-Type': 'application/json'}
         });
     if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.reload();
     } else {
         alert('Oops! Could not update post. Try again.')
     };

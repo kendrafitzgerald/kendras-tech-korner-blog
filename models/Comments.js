@@ -24,10 +24,17 @@ Comments.init (
                 key: 'id'
             },
         },
+        post_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model: 'posts',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'comments',
