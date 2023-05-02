@@ -1,12 +1,15 @@
  <div class ="card">
    <div class="card-header">
         <p class ="card-header-title"> {{title}}</p> 
-        <p class="card-header-subtitle">Posted by {{users.username}} on {{format_date createdAt}} </p>
+        <p class="card-header-subtitle">Posted by {{this.user.username}} on {{format_date createdAt}} </p>
     </div>
     <div class ="card-content is-strong">
         {{post_text}}
     </div>
 </div>
+
+ <button class="button is-link" id="delete-post">Delete Post</button>
+
 {{log this}}
 {{#if comments.length}}
 <h2>Comments</h2>
